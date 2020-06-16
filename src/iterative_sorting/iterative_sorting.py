@@ -1,40 +1,32 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
-    # [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
     for i in range(len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
 
-        for j in range(i, len(arr)):
+        for j in range(i + 1, len(arr)):
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
 
-        temp = arr[i]
-        arr[i] = arr[smallest_index]
-        arr[smallest_index] = temp
-        
+        # temp = arr[i]
+        # arr[i] = arr[smallest_index]
+        # arr[smallest_index] = temp
+
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+
     return arr
 
-
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort(arr):
-    # iterate through the passed in array
-    # look at and compare the first two items
-    # if the second item is less than the first item, swap their index
-    # repeat and compare the next two items
+# cocktail sort?
 
+
+def bubble_sort(arr):
     for i in range(len(arr)):
         for j in range(len(arr) - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
     return arr
-
-
-test_list = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-
-print(bubble_sort(test_list))
 
 
 '''
